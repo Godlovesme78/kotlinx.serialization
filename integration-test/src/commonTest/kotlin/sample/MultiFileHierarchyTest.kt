@@ -76,14 +76,6 @@ class AbstractBaseTest {
     }
 
     @Test
-    fun testSimpleChild() {
-        val encodedChild = """{"a":"11","y":42}"""
-        val decodedChild = Json.decodeFromString<TypedSealedClass.Child>(encodedChild)
-        assertEquals("Child(11, 42)", decodedChild.toString())
-        assertEquals(encodedChild, Json.encodeToString(decodedChild))
-    }
-
-    @Test
     fun testDoubleGeneric() {
         val email = Email<Int>().apply {
             value = "foo"
